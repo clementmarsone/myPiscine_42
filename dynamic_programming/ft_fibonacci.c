@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarsone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 11:58:12 by cmarsone          #+#    #+#             */
-/*   Updated: 2022/09/01 10:36:14 by cmarsone         ###   ########.fr       */
+/*   Created: 2022/08/31 15:30:55 by cmarsone          #+#    #+#             */
+/*   Updated: 2022/08/31 16:15:30 by cmarsone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+#include <stdio.h>
+
+int	ft_fibonacci(int n, int *memo)
 {
 	int	i;
 
-	i = 2;
-	while (i <= nb / i)
+	i = 0;
+	while (memo[i])
 	{
-		if (nb % i == 0)
-		{
-			return (0);
-		}
-		i += 1;
+		if (memo[i] == n)
+			memo[i] = ft_fibonacci(n - 2, memo) + ft_fibonacci(n - 1, memo);
+		i++;
 	}
-	return (1);
+	if (n < 0)
+		return (-1);
+	if (n == 0)
+		return (0);
+	if (n == 1)
+		return (1);
+	return (memo);
 }
 
-int	ft_find_next_prime(int nb)
+int	main(void)
 {
-	while (nb >= 2)
-	{
-		if (ft_is_prime(nb) == 1)
-			return (nb);
-		else
-			nb++;
-	}
-	return (2);
+	printf("%d\n", ft_fibonacci();
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmarsone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 17:11:12 by cmarsone          #+#    #+#             */
-/*   Updated: 2022/08/20 09:20:58 by cmarsone         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:07:40 by cmarsone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	ft_swap(char **a, char **b)
 {
 	char	*c;
 
-	c = NULL;
 	c = *a;
 	*a = *b;
 	*b = c;
@@ -54,12 +53,14 @@ int	main(int argc, char **argv)
 	int	j;
 
 	i = 1;
-	while (argv[i])
+	if (argc < 2)
+		return (0);
+	while (i < argc - 1)
 	{
 		j = i + 1;
 		while (j < argc)
 		{
-			if (ft_strcmp(argv[i], argv[j]) >= 0)
+			if (ft_strcmp(argv[i], argv[j]) > 0)
 				ft_swap(&argv[i], &argv[j]);
 			j++;
 		}
@@ -67,5 +68,7 @@ int	main(int argc, char **argv)
 		ft_putstr("\n");
 		i++;
 	}
+	ft_putstr(argv[i]);
+	ft_putstr("\n");
 	return (0);
 }

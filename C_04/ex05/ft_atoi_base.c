@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarsone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 17:27:57 by cmarsone          #+#    #+#             */
-/*   Updated: 2022/09/01 09:53:56 by cmarsone         ###   ########.fr       */
+/*   Created: 2022/09/01 09:58:11 by cmarsone          #+#    #+#             */
+/*   Updated: 2022/09/01 10:19:10 by cmarsone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 long int	is_base_valid(char *base)
 {
@@ -36,23 +44,42 @@ long int	is_base_valid(char *base)
 	return (i);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int	index_in_base(char c, char *base)
 {
-	long int	nb;
+	int	i;
 
+	i = 0;
+	while (base[i])
+	{
+		if (base[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+int	ft_atoi_base(char *str, char *base)
+{
+	int	i;
+	int	nbr;
+	int	n;
+
+	i = 0;
+	nbr = 0;
+	n = 1;
 	if (!is_base_valid(base))
-		return ;
-	nb = (long int)nbr;
-	if (nb < 0)
+		return (0);
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		write(1, "-", 1);
-		nb = -nb;
+		if (str[i++] == '-')
+			n *= -1;
 	}
-	else
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
 	{
-		if (nb / is_base_valid(base) != 0)
-			ft_putnbr_base(nb / is_base_valid(base), base);
-		write(1, &base[nb % is_base_valid(base)], 1);
+		nbr = nbr * ft_strlen(base) + index_in_base(str[i], base);
+		i++;
 	}
-	return ;
+	return (nbr * n);
 }
