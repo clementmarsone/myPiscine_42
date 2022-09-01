@@ -1,2 +1,0 @@
-"0","ggplot(data = hotel_bookings) +"
-"0"," geom_point(mapping = aes(x = stays_in_weekend_nights, y = children))"

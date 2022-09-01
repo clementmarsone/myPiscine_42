@@ -1,2 +1,0 @@
-"0","ggplot(data = onlineta_city_hotels) +"
-"0","  geom_point(mapping = aes(x = lead_time, y = children))"

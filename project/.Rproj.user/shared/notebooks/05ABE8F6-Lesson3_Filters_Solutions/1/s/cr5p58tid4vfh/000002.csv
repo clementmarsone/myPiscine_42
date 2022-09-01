@@ -1,6 +1,0 @@
-"0","onlineta_city_hotels <- filter(hotel_bookings, "
-"0","                           (hotel==""City Hotel"" & "
-"0","                             hotel_bookings$market_segment==""Online TA""))"
-"2","Error in filter(hotel_bookings, (hotel == ""City Hotel"" & hotel_bookings$market_segment ==  : 
-  object 'hotel' not found
-"

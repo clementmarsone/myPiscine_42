@@ -1,3 +1,0 @@
-"0","ggplot(data = supermarket_sales) + geom_point(mapping = aes(x = lead_time, y = children))"
-"2","Error in FUN(X[[i]], ...) : object 'lead_time' not found
-"

@@ -1,5 +1,0 @@
-"0","ggplot(data = hotel_bookings) +"
-"0"," geom_point(mapping = aes(x = , y = ))"
-"2","Error: geom_point requires the following missing aesthetics: x and y
-[90mRun `rlang::last_error()` to see where the error occurred.[39m
-"

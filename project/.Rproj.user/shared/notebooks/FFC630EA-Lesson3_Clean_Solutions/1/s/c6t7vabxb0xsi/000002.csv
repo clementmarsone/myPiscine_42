@@ -1,4 +1,0 @@
-"0","example_df <- bookings_df %>%"
-"0","  mutate(guests = adults + children + babies)"
-"0",""
-"0","head(example_df)"

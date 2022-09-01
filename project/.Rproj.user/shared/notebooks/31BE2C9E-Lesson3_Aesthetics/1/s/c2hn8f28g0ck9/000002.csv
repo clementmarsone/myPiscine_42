@@ -1,4 +1,0 @@
-"0","ggplot(data = hotel_bookings) +"
-"0","  geom_bar(mapping = aes(x = distribution_channel)) +"
-"0","  facet_wrap(~deposit_type~market_segment) +"
-"0","  theme(axis.text.x = element_text(angle = 45))"

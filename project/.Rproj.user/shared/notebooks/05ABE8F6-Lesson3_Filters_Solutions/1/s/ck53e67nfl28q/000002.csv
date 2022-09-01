@@ -1,2 +1,0 @@
-"0","ggplot(data = hotel_bookings, aes(x=hotel, y=lead_time)) +"
-"0","  geom_boxplot()"

@@ -1,3 +1,0 @@
-"0","ggplot(data = hotel_bookings) +"
-"0","  geom_bar(mapping = aes(x = hotel)) +"
-"0","  facet_wrap(~market_segment)"

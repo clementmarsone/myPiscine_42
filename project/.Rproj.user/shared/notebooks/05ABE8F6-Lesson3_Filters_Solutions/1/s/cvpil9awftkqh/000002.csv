@@ -1,2 +1,0 @@
-"0","ggplot(data = hotel_bookings) +"
-"0","  geom_bar(mapping = aes(x = hotel, fill = market_segment))"

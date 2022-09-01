@@ -1,8 +1,0 @@
-"0","ggplot(data = hotel_bookings) +"
-"0","  geom_bar(mapping = aes(x = market_segment)) +"
-"0","  facet_wrap(~hotel) +"
-"0","  theme(axis.text.x = element_text(angle = 45)) +"
-"0","  labs(title=""Comparison of market segments by hotel type for hotel bookings"","
-"0","       caption=paste0(""Data from: "", mindate, "" to "", maxdate),"
-"0","       x=""Market Segment"","
-"0","       y=""Number of Bookings"")"

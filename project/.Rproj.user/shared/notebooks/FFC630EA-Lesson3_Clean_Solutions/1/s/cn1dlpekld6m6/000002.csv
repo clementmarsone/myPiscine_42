@@ -1,3 +1,0 @@
-"0","example_df <- hotel_bookings %>%"
-"0","  select(arrival_date_year, arrival_date_month) %>% "
-"0","  unite(arrival_month_year, c(""arrival_date_month"", ""arrival_date_year""), sep = "" "")"
